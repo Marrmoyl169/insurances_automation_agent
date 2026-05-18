@@ -1,0 +1,9 @@
+client_secret.json
+.env
+__pycache__/
+token.json
+awaiting_confirmation.json
+pending_renewals.json
+pending_cancellations.json
+.DS_Store
+*.json
