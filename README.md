@@ -29,7 +29,7 @@ This Python-based agent fully automates the workflow:
 - `llm.py` — OpenAI integration for natural language lists exclusion.
 - `memory.py` — JSON-based state persistence layer (handles short-term and long-term memory for active policies).
 - `sheets.py` — Google Workspace API wrapper.
-- `scheduler.py` — Daily job scheduler with randomized execution time (10:00–17:00 Prague time).
+- `scheduler.py` — Runs main.py every weekday at 15:00.
 
 ## Setup
 1. Clone the repository.
@@ -39,4 +39,12 @@ This Python-based agent fully automates the workflow:
    TELEGRAM_TOKEN=your_bot_token
    CHAT_ID=your_telegram_chat_id
    SPREADSHEET_ID=your_google_sheet_id
-   OPENAI_API_KEY=your_openai_key# 
+   OPENAI_API_KEY=your_openai_key
+   
+4. Set up Google Sheets API credentials:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project and enable **Google Sheets API**
+   - Go to **Credentials** → **Create Credentials** → **OAuth 2.0 Client ID**
+   - Download the file and rename it to `client_secret.json`, place it in the project root
+   - Run the project once locally — it will open a browser window to authorize access
+   - After authorization, `token.json` will be generated automatically in the project root
